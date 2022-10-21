@@ -9,13 +9,7 @@
       "name": "TS debug",
       "type": "node",
       "request": "launch",
-      // "program": "${workspaceRoot}/node_modules/ts-node/dist/bin.js",
-      "program": "/home/mkeasy/.nvm/versions/node/v16.18.0/bin/ts-node",
-      "args": ["${relativeFile}"],
-      "cwd": "${workspaceRoot}",
-      "env": {
-        "stage": "debug"
-      }
+      "program": "${file}"
     }
   ]
 }
