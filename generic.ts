@@ -1,4 +1,5 @@
-{ // polymorphism(다형성)
+{
+  // polymorphism(다형성)
   // generic은 type의 placeholder와 같은 것
 
   // polymorphism
@@ -18,24 +19,22 @@
     // (arr: boolean[]): void
     // (arr: string[]): void
     // (arr: (number|string|boolean)[]):void
-    <T>(arr: T[]):void // T가 generic으로 위의 타입정의를 모두 포함
-  }
+    <T>(arr: T[]): void; // T가 generic으로 위의 타입정의를 모두 포함
+  };
   const superPrint: SuperPrint = (arr) => {
-    arr.forEach(i => console.log(i))
-  }
-  superPrint([1,2,3,4])
-  superPrint([true, false])
-  superPrint(["1", "2"])
-  superPrint(["1", "2", false, 3])
+    arr.forEach((i) => console.log(i));
+  };
+  superPrint([1, 2, 3, 4]);
+  superPrint([true, false]);
+  superPrint(['1', '2']);
+  superPrint(['1', '2', false, 3]);
 
-
-  console.log('=================')
+  console.log('=================');
   // 참고 : https://stackoverflow.com/questions/32043487/difference-between-call-signature-and-function-type
   type SuperPrint2 = {
-    <T>(arr: T[]):T
-  }
-  const superPrint2: SuperPrint2 = (arr) => arr[0]
-  const a = superPrint2([1,"2",3,4])
-  console.log(a)
-
+    <T>(arr: T[]): T;
+  };
+  const superPrint2: SuperPrint2 = (arr) => arr[0];
+  const a = superPrint2([1, '2', 3, 4]);
+  console.log(a);
 }
